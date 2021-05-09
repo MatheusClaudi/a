@@ -1,0 +1,124 @@
+
+<div class="content">
+    <div class="card">
+        <div class="top-options">
+            <div class="page-tittle">
+                Listagem de lotes de vacinas
+            </div>
+
+            <div class="top-btns">
+                <div (click)="createLoteVacina()" class="btn add">
+                    <img class="btn-icon add-icon" src="../../../assets/icons/plus.svg">
+
+                    <div class="btn-name">
+                        Criar
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="outer">
+          <form [formGroup]="filterForm">
+            <table class="table">
+              <thead>
+                <tr class="columns-names">
+                  <th class="alert-box">ID</th>
+                  <th class="alert-box">IDPosto</th>
+                  <th class="alert-box">IDVacina</th>
+                  <th class="alert-box">Nº Doses</th>
+                  <th class="alert-box">Validade</th>
+                  <th class="alert-box">Quantidade de doses</th>
+                  <th class="alert-box">Opções</th>
+                </tr>
+                <tr class="columns-names">
+
+                  <th class="alert-box">
+                    <input type="text" formControlName="idFilter" placeholder="Pesquisar">
+                  </th>
+                  <th class="alert-box">
+                    <input type="text" formControlName="idPostoFilter" placeholder="Pesquisar">
+                  </th>
+                  <th class="alert-box">
+                    <input type="text"  formControlName="idVacinaFilter" placeholder="Pesquisar">
+                  </th>
+                  <th class="alert-box">
+                    <input type="text"  formControlName="dosesFilter" placeholder="Pesquisar">
+                  </th>
+                  <th class="alert-box">
+                    <input type="text" formControlName="validadeFilter" placeholder="Pesquisar">
+                  </th>
+                  <th class="alert-box">
+                    <input type="text"  formControlName="quantidadeDosesFilter" placeholder="Pesquisar">
+                  </th>
+                  
+
+                  <th class="alert-box">
+                    <div class="btn blank-btn">
+                      <img class="btn-icon" src="../../../assets/icons/search.svg">
+  
+                      <div class="btn-name blank-btn-name">
+                          Aplicar
+                      </div>
+                  </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let loteVacina of lotesVacina; let i = index">
+                  <tr>
+                    <td>
+                      <div class=" table-row" >
+                        <span>{{ loteVacina.id }}</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class=" table-row" >
+                        <span>{{ loteVacina.idPosto }}</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class=" table-row" >
+                        <span>{{ loteVacina.idVacina }}</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class=" table-row" >
+                        <span>{{ loteVacina.doses }}</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class=" table-row" >
+                        <span>{{ dateService.getDateFormat(loteVacina.validade) }}</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class=" table-row" >
+                        <span>{{ loteVacina.quantidadeTotal }}</span>
+                      </div>
+                    </td>
+
+                    
+                    <td>
+                      <div class="table-row  icons-table-row" >
+                        <button class="btn-table-list spacer-btn-table">
+                          <img src="../../../assets/icons/eye.svg">
+                        </button>
+                        <button (click)="editLoteVacina(loteVacina)" class="btn-table-list spacer-btn-table">
+                          <img src="../../../assets/icons/pen.svg">
+                        </button>
+                        <button class="btn-table-list spacer-btn-table">
+                          <img src="../../../assets/icons/trash.svg">
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  
+              </tbody>
+            </table>
+          </form>
+          </div>
+        
+          <app-pagination [data]="{numberOfPages: 8, currentPage: 1}" (newPageSelectedEvent)="test()"></app-pagination>
+
+    </div>
+</div>

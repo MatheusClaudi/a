@@ -1,0 +1,59 @@
+<div class="content">
+    <div class="card">        
+        <div class="card-content">
+
+            <div class="page-tittle">
+                Slots de horário
+            </div>
+            
+            <div class="input-area">
+                <div class="section-name ">
+                    Dados gerais:
+                </div>
+            <br/>
+                <div class="inputs">
+                    <app-date-picker (newDateSelected)="teste($event)"></app-date-picker>                        
+                </div>
+            </div>
+
+            <div class="input-area">
+                <div class="section-name ">
+                    Dados gerais:
+                </div>
+            <br/>
+                <div class="inputs">
+                    <div class="section-content">
+
+                        <div class="slot-box" *ngFor="let slot of slots">
+                            
+                            <div class="hora">
+                                <div>
+                                    {{ slot.horaInicio }} - {{ slot.horaFim}}
+                                </div>
+                            </div>
+
+                            <div class="quantidade">
+                                {{ slot.quantidadePessoas }} Pessoas
+                            </div>
+                        </div>
+                        
+
+                    </div>                         
+                </div>
+            </div>
+
+    
+            <div class="bottom-options">
+                <div class="btn add">
+                    <img class="btn-icon" src="../../../assets/icons/calendar.svg">
+
+                    <div class="btn-name">
+                        Agendar
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+    </div>
+</div>
+

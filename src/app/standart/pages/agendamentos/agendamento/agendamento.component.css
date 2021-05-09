@@ -1,0 +1,133 @@
+.content {
+    width: 100%;
+}
+
+.card {
+    width: 96%;
+    min-height: calc(100vh - var(--height-topbar) - 31px);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 40px;
+    margin-left: 2%;
+    margin-right: 2%;
+    border: 1px solid var(--c-gray-card-border-3);
+    box-sizing: border-box;
+    border-radius: 20px;
+} 
+
+.card-content {
+    display: grid;
+    padding-left: min(5%, 34px);
+    grid-template-columns: 100%;
+}
+
+.page-tittle {
+    margin-top: 25px;
+    margin-left: 0px;
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 31px;
+    color: var( --c-black-text);
+}
+
+.section-name {
+    margin-bottom: 20px;
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 26px;
+    color: var( --c-black-field-text-content); 
+}
+
+
+.input-area {
+    margin-top: 30px;
+    margin-left: 15px;
+}
+
+.inputs {
+    margin-left: 10px;
+}
+
+.bottom-options{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 60px;
+    margin-left: 60px;
+}
+
+.add {
+    padding-top: 7px;
+    width: 215px;
+    margin-left: 20px;
+    width: 161px;
+    padding-left: 18px;
+    height: 56px;
+
+}
+
+
+.btn-icon {
+    margin-top: 8px;
+    width: 23px;
+    height: 23px;
+}
+
+.btn-name {
+    margin-top: 7px;
+    margin-right: 50px;
+}
+
+
+.r {
+    float: left;
+    margin-right: 40px;
+}
+
+.section-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.slot-box {
+    border: 1px solid #555555;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+.slot-box .hora {
+    display: flex;
+    flex-direction: row;
+    font-family: var(--secondary-font);
+    font-style: normal;
+    font-size: 16px;
+    line-height: 21px;
+    color: #585858;
+}
+
+
+.slot-box .quantidade {
+    font-family: var(--secondary-font);
+    font-style: normal;
+    font-size: 16px;
+    line-height: 21px;
+    color: #585858;
+}
+
+.slot-box img {
+    margin-left: 15px;
+    cursor: pointer;
+}

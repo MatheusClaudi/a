@@ -1,0 +1,159 @@
+<div class="content">
+    <div class="card">
+        <div class="top-options">
+            <div class="page-tittle">
+                Dados de lote vacina
+            </div>
+        </div>
+        
+        <form [formGroup]="loteVacinaDataForm">
+            <div class="columns">
+                <div class = "column">
+    
+                    <div class="section">
+                        <div class="section-name">
+                            Dados gerais:
+                        </div>
+    
+                        <div class="section-content">
+                            <div class="field">
+                                <div class="field-tittle"> Id: </div>
+                                <input formControlName="id" class="field-box tiny-field">
+                                <div *ngFor="let error of loteVacinaFormErrors.errorMessages.id">
+                                    <div *ngIf="hasErrorWith(loteVacinaDataForm,'id', error.type)" class="error-message"> {{ error.message }}</div>
+                                </div>
+                            </div>
+    
+                            <div class="field">
+                                <div class="field-tittle"> Nº doses: </div>
+                                <input formControlName="doses" class="field-box tiny-field">
+                                <div *ngFor="let error of loteVacinaFormErrors.errorMessages.doses">
+                                    <div *ngIf="hasErrorWith(loteVacinaDataForm,'doses', error.type)" class="error-message"> {{ error.message }}</div>
+                                </div>
+                            </div>
+    
+                            
+    
+                            <div class="field">
+                                <div class="field-tittle"> Validade: </div>
+                                <input formControlName="validade" class="field-box">
+                                <div *ngFor="let error of loteVacinaFormErrors.errorMessages.validade">
+                                    <div *ngIf="hasErrorWith(loteVacinaDataForm,'validade', error.type)" class="error-message"> {{ error.message }}</div>
+                                </div>
+                            </div>
+    
+                        </div>    
+                    </div>
+    
+                    <div class="section">
+                        <div class="section-name">
+                            Dados cadastrais:
+                        </div>
+                        <div class="section-content">
+
+                            <div class="field">
+                                <div class="field-tittle"> ID Posto: </div>
+                                <input formControlName="idPosto" class="field-box tiny-field">
+                                <div *ngFor="let error of loteVacinaFormErrors.errorMessages.idPosto">
+                                    <div *ngIf="hasErrorWith(loteVacinaDataForm,'idPosto', error.type)" class="error-message"> {{ error.message }}</div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <select class="btn-selector btn-selector-name">
+                                    <option class="btn-selector-name" value="australia">Seleção de posto</option>
+                                    <option class="btn-selector-name" value="australia">Australia</option>
+                                    <option class="btn-selector-name" value="canada">Canada</option>
+                                    <option class="btn-selector-name" value="usa">USA</option>
+                                </select>       
+                                <div class="btn-selector-icon"></div>
+                            </div>
+
+                            <div class="field">
+                                <div class="field-tittle"> ID Vacina: </div>
+                                <input formControlName="idVacina" class="field-box tiny-field">
+                                <div *ngFor="let error of loteVacinaFormErrors.errorMessages.idVacina">
+                                    <div *ngIf="hasErrorWith(loteVacinaDataForm,'idVacina', error.type)" class="error-message"> {{ error.message }}</div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <select class="btn-selector btn-selector-name">
+                                    <option class="btn-selector-name" value="australia">Seleção de vacina</option>
+                                    <option class="btn-selector-name" value="australia">Australia</option>
+                                    <option class="btn-selector-name" value="canada">Canada</option>
+                                    <option class="btn-selector-name" value="usa">USA</option>
+                                </select>       
+                                <div class="btn-selector-icon"></div>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+    
+                <div class = "column">
+    
+                    <div class="section">
+                
+                        <div class="check-radio-tittle">
+                            Dados de estoque:
+                        </div>
+            
+                        <div class="field">
+                            <div class="field-tittle"> Quantidade total: </div>
+                            <input formControlName="quantidadeTotal" class="field-box">
+                            <div *ngFor="let error of loteVacinaFormErrors.errorMessages.quantidadeTotal">
+                                <div *ngIf="hasErrorWith(loteVacinaDataForm,'quantidadeTotal', error.type)" class="error-message"> {{ error.message }}</div>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="field-tittle"> Quantidade usada: </div>
+                            <input formControlName="quantidadeUsada" class="field-box">
+                            <div *ngFor="let error of loteVacinaFormErrors.errorMessages.quantidadeUsada">
+                                <div *ngIf="hasErrorWith(loteVacinaDataForm,'quantidadeUsada', error.type)" class="error-message"> {{ error.message }}</div>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="field-tittle"> Quantidade disponível: </div>
+                            <input formControlName="quantidadeDisponivel" class="field-box">
+                            <div *ngFor="let error of loteVacinaFormErrors.errorMessages.quantidadeDisponivel">
+                                <div *ngIf="hasErrorWith(loteVacinaDataForm,'quantidadeDisponivel', error.type)" class="error-message"> {{ error.message }}</div>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="field-tittle">  Quantidade liberada: </div>
+                            <input formControlName="quantidadeLiberada" class="field-box">
+                            <div *ngFor="let error of loteVacinaFormErrors.errorMessages.quantidadeLiberada">
+                                <div *ngIf="hasErrorWith(loteVacinaDataForm,'quantidadeLiberada', error.type)" class="error-message"> {{ error.message }}</div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+    
+            <div class="bottom-options">
+                <div class="btn save" (click)="submitForm()">
+                    <div class="btn-name">
+                        Salvar
+                    </div>
+        
+                    <img class="btn-icon" src="../../../assets/icons/check.svg">
+                </div>
+    
+                <div class="btn cancel" (click)="cancelFormSubmition()">
+                    <div class="btn-name">
+                        Cancelar
+                    </div>
+                    <img class="btn-icon" src="../../../assets/icons/cancel.svg">
+                </div>
+            </div>
+        </form>
+        
+
+    </div>
+</div>
+
+
+
